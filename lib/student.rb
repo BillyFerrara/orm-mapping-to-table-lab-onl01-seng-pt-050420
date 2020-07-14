@@ -34,8 +34,10 @@ class Student
     sql = <<-SQL
       INSERT INTO students (name, grade)
       VALUES (?, ?)
-      DB[:conn].execute(sql, self.name, self.grade)
       SQL
+      
+      DB[:conn].execute(sql, self.name, self.grade)
+
       @id = DB[:conn].execute("SELECT MAX(ID) AS LastID FROM students")[0][0]
 
   end
