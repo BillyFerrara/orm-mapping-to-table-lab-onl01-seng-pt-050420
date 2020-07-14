@@ -25,7 +25,7 @@ class Student
 
   def self.drop_table
     sql = <<- SQL
-    drop table stuents;
+    drop table students;
     SQL
     DB[:conn].execute(sql)
   end
